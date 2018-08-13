@@ -8,7 +8,7 @@ $(window).ready(function () {
             hasil.html("Isi NIM terlebih dahulu");
         }
         else{
-            kodePK = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","0","P","Q","R","S","T","W"];
+            kodePK = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W"];
 
             hslknv = "103";
 
