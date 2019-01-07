@@ -3,14 +3,16 @@ $(window).ready(function () {
         var nim = $('input[name="NIM"]').val();
         var hasil = $("#hasil-konv");
         e.preventDefault();
-
+// /^[A-Z][0-9]{6}$/i
         if(nim == ""){
             hasil.html("Isi NIM terlebih dahulu");
         }
         else{
-            kodePK = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W"];
+            kodePK = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","0","P","Q","R","S","T","W"];
 
-            hslknv = "103";
+            hslknv = $('#bank').val() + '-';
+
+            hslknv += "103-";
 
             for(var i = 0;i < kodePK.length;i++){
                 if(nim.substr(0, 1) == kodePK[i]){
@@ -23,6 +25,9 @@ $(window).ready(function () {
                     break;
                 }
             }
+
+            hslknv += '-';
+
             if(i == kodePK.length){
                 hasil.html("NIM tidak valid");
             }
