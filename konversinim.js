@@ -10,12 +10,16 @@ $(window).ready(function () {
         else{
             kodePK = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","0","P","Q","R","S","T","W"];
 
-            hslknv = $('#bank').val() + '-';
+            hslknv = $('#bank').val();
+
+            if($('#bank').val() !== '')
+                hslknv += '-';
 
             hslknv += "103-";
 
+
             for(var i = 0;i < kodePK.length;i++){
-                if(nim.substr(0, 1) == kodePK[i]){
+                if(nim.substr(0, 1).toUpperCase() == kodePK[i]){
                     if(i > 8){
                         hslknv += (i+1);
                     }
@@ -28,12 +32,13 @@ $(window).ready(function () {
 
             hslknv += '-';
 
-            if(i == kodePK.length){
+            if(i == kodePK.length || nim.length !== 7){
                 hasil.html("NIM tidak valid");
             }
-            hslknv += nim.substr(1, 6);
-
-            hasil.html("Hasil konversi : "+hslknv);
+            else{
+                hslknv += nim.substr(1, 6);
+                hasil.html("Hasil konversi : "+hslknv);
+            }
         }
     });
 });
